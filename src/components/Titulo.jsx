@@ -1,4 +1,4 @@
-const Titles = () => {
+const Titulo = () => {
   return (
     <section className="text-center">
       <h1 className="display-4">LISTA DE TAREAS</h1>
@@ -7,4 +7,4 @@ const Titles = () => {
   );
 };
 
-export default Titles;
+export default Titulo;

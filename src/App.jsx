@@ -1,12 +1,14 @@
 import { Container } from "react-bootstrap";
 import "./App.css";
-import Titles from "./components/Titles";
+import Titulo from "./components/Titulo";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Lista from "./components/lista";
 
 function App() {
   return (
     <Container>
-      <Titles></Titles>
+      <Titulo></Titulo>
+      <Lista></Lista>
     </Container>
   );
 }
