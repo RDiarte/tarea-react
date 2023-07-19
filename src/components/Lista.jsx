@@ -4,8 +4,8 @@ import ItemTarea from "./ItemTarea";
 const Lista = ({ listaProps }) => {
   return (
     <ListGroup>
-      {listaProps.map(() => (
-        <ItemTarea></ItemTarea>
+      {listaProps.map((tareaListada, posicion) => (
+        <ItemTarea key={posicion}></ItemTarea>
       ))}
     </ListGroup>
   );
