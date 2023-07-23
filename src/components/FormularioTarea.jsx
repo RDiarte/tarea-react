@@ -7,10 +7,18 @@ const FormularioTarea = () => {
   const [tareas, setTareas] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    //guardar la tarea en el array tareas
+    //guardar la tarea en el array tareas//
     setTareas([...tareas, tarea]);
-    // limpiar el value del input
+    // limpiar el value del input//
     setTarea("");
+  };
+
+  // crear una funcion para borrar tarea//
+  const borrarTarea = (tareaBorrar) => {
+    let listaTareaFiltrada = tareas.filter(
+      (itemTarea) => itemTarea !== tareaBorrar
+    );
+    setTareas(listaTareaFiltrada);
   };
 
   return (
@@ -28,7 +36,7 @@ const FormularioTarea = () => {
           </Button>
         </Form.Group>
       </Form>
-      <Lista listaProps={tareas}></Lista>
+      <Lista listaProps={tareas} borrarTarea={borrarTarea}></Lista>
     </>
   );
 };
