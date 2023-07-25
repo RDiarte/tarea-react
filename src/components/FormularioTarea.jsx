@@ -1,10 +1,28 @@
 import { Button, Form } from "react-bootstrap";
 import Lista from "./lista";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const FormularioTarea = () => {
   const [tarea, setTarea] = useState("");
-  const [tareas, setTareas] = useState([]);
+
+  let tareasLocalStorage = JSON.parse(localStorage.getItem("tareas")) || [];
+
+  const [tareas, setTareas] = useState(tareasLocalStorage);
+
+  //Esta version de useEffect se ejecuta en montaje y actualizacion del state Lista
+
+  useEffect(() => {
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+  }, [tareas]);
+
+  //esta version se ejecuta en el montaje y actualizacion de todos los estados
+
+  //useEffect(() => { console.log("Esto fue ejecutado con useEffect"), } [lista]);
+
+  //Solo para usar useEffect en montaje
+
+  //useEffect(() => { }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     //guardar la tarea en el array tareas//
